@@ -12,6 +12,8 @@ export default function Home() {
     fetchRaceResults();
   }, []);
 
+// test
+
   return (
     <div style={{ textAlign: "center", padding: "20px" }}>
       <h1>🏎️ Formula 1 Latest Race Results 🏁</h1>
