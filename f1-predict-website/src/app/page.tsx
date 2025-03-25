@@ -22,7 +22,7 @@ const comparePredictions = (predictions: string[], raceData: Driver[]) => {
   let totalPoints = 0;
   const comparisonResults =  predictions.map((driver, index) => {
     const actualDriver = raceData.find(d => d.Driver.familyName === driver);
-    const actualPosition = actualDriver ? actualDriver.position : -1;
+    const actualPosition = actualDriver ? (isNaN(actualDriver.position) ? 20 : actualDriver.position) : -1;
     const point = Math.abs(actualPosition - (index + 1));
     totalPoints += point;
     return {
@@ -102,12 +102,12 @@ export default function Home() {
                   ))}
                 </ul>
             </div>
-            {players.map(player => (
-            <div className={styles.list} key={player.name}>
+            {players.map((player, playerIndex) => (
+            <div className={styles.list} key={`${player.name}-${playerIndex}`}>
               <h2>{player.name} <span className={styles.totpoints}>{player.totalPoints}</span></h2>
               <ul>
                 {player.predictions.comparisonResults.map((driver, index) => (
-                  <li key={index}>
+                  <li key={`${player.name}-${index}`}>
                     {index + 1}. <strong>{driver.driver}</strong> <span className={styles.points}>{driver.point}</span>
                   </li>
                 ))}
