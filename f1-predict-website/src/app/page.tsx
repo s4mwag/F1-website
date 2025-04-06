@@ -95,29 +95,27 @@ export default function Home() {
             <div className={styles.list}>
                 <h2>Standings</h2>
                 <ul>
-                  {raceData.map((driver: Driver) => (
-                    <li key={driver.position}>
-                      {isNaN(driver.position) ? 20 : driver.position}. <strong>{driver.Driver.familyName}</strong> <span className={styles.points}>{driver.points}</span>
-                    </li>
-                  ))}
+                {raceData.map((driver: Driver) => (
+                  <li key={`${driver.position}-${driver.Driver.familyName}`}>
+                    {isNaN(driver.position) ? 20 : driver.position}. <strong>{driver.Driver.familyName}</strong> <span className={styles.points}>{driver.points}</span>
+                  </li>
+                ))}
                 </ul>
             </div>
             {players.map(player => (
-            <div className={styles.list} key={player.name}>
-              <h2>{player.name} <span className={styles.totpoints}>{player.totalPoints}</span></h2>
-              <ul>
-                {player.predictions.comparisonResults.map((driver, index) => (
-                  <li key={`${player.name}-${index}`}>
-                    {index + 1}. <strong>{driver.driver}</strong> <span className={styles.points}>{driver.point}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+              <div className={styles.list} key={player.name}>
+                <h2>{player.name} <span className={styles.totpoints}>{player.totalPoints}</span></h2>
+                <ul>
+                  {player.predictions.comparisonResults.map((driver, index) => (
+                    <li key={`${player.name}-${driver.driver}-${index}`}>
+                      {index + 1}. <strong> {driver.driver}</strong> <span className={styles.points}>{driver.point}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
         </div>
-
       </main>
-
     </div>
   );
 }

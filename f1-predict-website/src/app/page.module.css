@@ -15,6 +15,7 @@
   gap: 10px;
   font-family: var(--font-geist-sans);
   background-color: #2e2e2e;
+  overflow-x: auto;
 }
 
 @media (prefers-color-scheme: dark) {

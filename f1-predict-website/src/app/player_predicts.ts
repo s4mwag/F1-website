@@ -1,6 +1,6 @@
 export const player_predicts = {
   Samuel: ["Hamilton", "Norris", "Verstappen", "Piastri", "Leclerc", "Russell", "Antonelli", "Lawson", "Sainz", "Hülkenberg",
-      "Alonso", "Tsunoda", "Albon", "Bearman", "Gasly", "Borteleto", "Ocon", "Stroll", "Hadjar", "Doohan"],
+      "Alonso", "Tsunoda", "Albon", "Bearman", "Gasly", "Bortoleto", "Ocon", "Stroll", "Hadjar", "Doohan"],
 
   Anton: ["Norris", "Verstappen", "Leclerc", "Piastri", "Hamilton", "Russell", "Lawson", "Alonso", "Antonelli", "Gasly",
       "Sainz", "Stroll", "Albon", "Tsunoda", "Doohan", "Hülkenberg", "Hadjar", "Bearman", "Bortoleto", "Ocon"],
