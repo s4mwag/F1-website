@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Driver Standings and Predictions</h1>
+
+<div style="display: flex; flex-wrap: wrap; gap: 20px;">
+    <!-- Current Standings Table -->
+    <div>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Driver</th>
+                    <th>Position</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for driver in standings.current_standings %}
+                <tr>
+                    <td>{{ driver.driver }}</td>
+                    <td>{{ driver.position }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Player Predictions Tables -->
+    {% for player, predictions in standings.players.items() %}
+    <div>
+        <h3>{{ player }} : {{ predictions[-1].total_position_difference }}</h3>
+        <table border="1">
+            <tbody>
+                {% for prediction in predictions[:-1] %}
+                <tr>
+                    <td>{{ prediction.driver }}</td>
+                    <td>{{ prediction.position_difference }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
