@@ -68,6 +68,11 @@
   align-items: left;
 }
 
+.playersWrapper {
+  display: flex;
+  gap: 24px;
+}
+
 .list h2 {
   text-align: left;
   font-size: 24px;
@@ -94,6 +99,31 @@
 .list li{
   display: flex;
   justify-content: space-between;
+}
+
+/* Accordion header and content for compact mobile */
+.playerHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  cursor: pointer;
+}
+
+.playerHeaderButton {
+  background: transparent;
+  border: none;
+  width: 100%;
+  text-align: left;
+  padding: 8px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 16px;
+}
+
+.playerContent.collapsed {
+  display: none;
 }
 
 .points {
@@ -227,6 +257,8 @@ a.secondary {
     justify-content: center;
   }
 }
+
+/* (Removed mobile customization that forced vertical stacking) */
 
 @media (prefers-color-scheme: dark) {
   .logo {

@@ -1,0 +1,848 @@
+{
+  "standings": [
+    {
+      "position": 1,
+      "driver": "Verstappen",
+      "points": 437
+    },
+    {
+      "position": 2,
+      "driver": "Norris",
+      "points": 374
+    },
+    {
+      "position": 3,
+      "driver": "Leclerc",
+      "points": 356
+    },
+    {
+      "position": 4,
+      "driver": "Piastri",
+      "points": 292
+    },
+    {
+      "position": 5,
+      "driver": "Sainz",
+      "points": 290
+    },
+    {
+      "position": 6,
+      "driver": "Russell",
+      "points": 245
+    },
+    {
+      "position": 7,
+      "driver": "Hamilton",
+      "points": 223
+    },
+    {
+      "position": 8,
+      "driver": "Perez",
+      "points": 152
+    },
+    {
+      "position": 9,
+      "driver": "Alonso",
+      "points": 70
+    },
+    {
+      "position": 10,
+      "driver": "Gasly",
+      "points": 42
+    },
+    {
+      "position": 11,
+      "driver": "Hulkenberg",
+      "points": 41
+    },
+    {
+      "position": 12,
+      "driver": "Tsunoda",
+      "points": 30
+    },
+    {
+      "position": 13,
+      "driver": "Stroll",
+      "points": 24
+    },
+    {
+      "position": 14,
+      "driver": "Ocon",
+      "points": 23
+    },
+    {
+      "position": 15,
+      "driver": "Magnussen",
+      "points": 16
+    },
+    {
+      "position": 16,
+      "driver": "Albon",
+      "points": 12
+    },
+    {
+      "position": 17,
+      "driver": "Ricciardo",
+      "points": 12
+    },
+    {
+      "position": 18,
+      "driver": "Bearman",
+      "points": 7
+    },
+    {
+      "position": 19,
+      "driver": "Colapinto",
+      "points": 5
+    },
+    {
+      "position": 20,
+      "driver": "Zhou",
+      "points": 4
+    }
+  ],
+  "players": [
+    {
+      "name": "Samuel",
+      "total": 56,
+      "picks": [
+        {
+          "position": 1,
+          "driver": "Verstappen",
+          "points": 5
+        },
+        {
+          "position": 2,
+          "driver": "Perez",
+          "points": 6
+        },
+        {
+          "position": 3,
+          "driver": "Leclerc",
+          "points": 0
+        },
+        {
+          "position": 4,
+          "driver": "Hamilton",
+          "points": 3
+        },
+        {
+          "position": 5,
+          "driver": "Norris",
+          "points": 3
+        },
+        {
+          "position": 6,
+          "driver": "Alonso",
+          "points": 3
+        },
+        {
+          "position": 7,
+          "driver": "Sainz",
+          "points": 2
+        },
+        {
+          "position": 8,
+          "driver": "Russell",
+          "points": 2
+        },
+        {
+          "position": 9,
+          "driver": "Piastri",
+          "points": 5
+        },
+        {
+          "position": 10,
+          "driver": "Ocon",
+          "points": 4
+        },
+        {
+          "position": 11,
+          "driver": "Stroll",
+          "points": 2
+        },
+        {
+          "position": 12,
+          "driver": "Gasly",
+          "points": 2
+        },
+        {
+          "position": 13,
+          "driver": "Ricciardo",
+          "points": 4
+        },
+        {
+          "position": 14,
+          "driver": "Albon",
+          "points": 2
+        },
+        {
+          "position": 15,
+          "driver": "Tsunoda",
+          "points": 3
+        },
+        {
+          "position": 16,
+          "driver": "Hulkenberg",
+          "points": 5
+        },
+        {
+          "position": 17,
+          "driver": "Magnussen",
+          "points": 2
+        },
+        {
+          "position": 18,
+          "driver": "Bottas",
+          "points": 2
+        },
+        {
+          "position": 19,
+          "driver": "Sargeant",
+          "points": 1
+        },
+        {
+          "position": 20,
+          "driver": "Guanyu",
+          "points": 0
+        }
+      ]
+    },
+    {
+      "name": "Anton",
+      "total": 44,
+      "picks": [
+        {
+          "position": 1,
+          "driver": "Verstappen",
+          "points": 5
+        },
+        {
+          "position": 2,
+          "driver": "Norris",
+          "points": 0
+        },
+        {
+          "position": 3,
+          "driver": "Hamilton",
+          "points": 4
+        },
+        {
+          "position": 4,
+          "driver": "Piastri",
+          "points": 0
+        },
+        {
+          "position": 5,
+          "driver": "Leclerc",
+          "points": 2
+        },
+        {
+          "position": 6,
+          "driver": "Russell",
+          "points": 0
+        },
+        {
+          "position": 7,
+          "driver": "Perez",
+          "points": 1
+        },
+        {
+          "position": 8,
+          "driver": "Sainz",
+          "points": 3
+        },
+        {
+          "position": 9,
+          "driver": "Alonso",
+          "points": 0
+        },
+        {
+          "position": 10,
+          "driver": "Stroll",
+          "points": 3
+        },
+        {
+          "position": 11,
+          "driver": "Gasly",
+          "points": 1
+        },
+        {
+          "position": 12,
+          "driver": "Ocon",
+          "points": 2
+        },
+        {
+          "position": 13,
+          "driver": "Ricciardo",
+          "points": 4
+        },
+        {
+          "position": 14,
+          "driver": "Albon",
+          "points": 2
+        },
+        {
+          "position": 15,
+          "driver": "Tsunoda",
+          "points": 3
+        },
+        {
+          "position": 16,
+          "driver": "Bottas",
+          "points": 4
+        },
+        {
+          "position": 17,
+          "driver": "Magnussen",
+          "points": 2
+        },
+        {
+          "position": 18,
+          "driver": "Hulkenberg",
+          "points": 7
+        },
+        {
+          "position": 19,
+          "driver": "Guanyu",
+          "points": 1
+        },
+        {
+          "position": 20,
+          "driver": "Sargeant",
+          "points": 0
+        }
+      ]
+    },
+    {
+      "name": "Herman",
+      "total": 56,
+      "picks": [
+        {
+          "position": 1,
+          "driver": "Verstappen",
+          "points": 5
+        },
+        {
+          "position": 2,
+          "driver": "Leclerc",
+          "points": 1
+        },
+        {
+          "position": 3,
+          "driver": "Sainz",
+          "points": 2
+        },
+        {
+          "position": 4,
+          "driver": "Norris",
+          "points": 2
+        },
+        {
+          "position": 5,
+          "driver": "Piastri",
+          "points": 1
+        },
+        {
+          "position": 6,
+          "driver": "Perez",
+          "points": 2
+        },
+        {
+          "position": 7,
+          "driver": "Russell",
+          "points": 1
+        },
+        {
+          "position": 8,
+          "driver": "Hamilton",
+          "points": 1
+        },
+        {
+          "position": 9,
+          "driver": "Alonso",
+          "points": 0
+        },
+        {
+          "position": 10,
+          "driver": "Gasly",
+          "points": 0
+        },
+        {
+          "position": 11,
+          "driver": "Stroll",
+          "points": 2
+        },
+        {
+          "position": 12,
+          "driver": "Ocon",
+          "points": 2
+        },
+        {
+          "position": 13,
+          "driver": "Albon",
+          "points": 3
+        },
+        {
+          "position": 14,
+          "driver": "Bottas",
+          "points": 6
+        },
+        {
+          "position": 15,
+          "driver": "Guanyu",
+          "points": 5
+        },
+        {
+          "position": 16,
+          "driver": "Sargeant",
+          "points": 4
+        },
+        {
+          "position": 17,
+          "driver": "Ricciardo",
+          "points": 0
+        },
+        {
+          "position": 18,
+          "driver": "Tsunoda",
+          "points": 6
+        },
+        {
+          "position": 19,
+          "driver": "Hulkenberg",
+          "points": 8
+        },
+        {
+          "position": 20,
+          "driver": "Magnussen",
+          "points": 5
+        }
+      ]
+    },
+    {
+      "name": "David",
+      "total": 50,
+      "picks": [
+        {
+          "position": 1,
+          "driver": "Norris",
+          "points": 1
+        },
+        {
+          "position": 2,
+          "driver": "Verstappen",
+          "points": 1
+        },
+        {
+          "position": 3,
+          "driver": "Leclerc",
+          "points": 5
+        },
+        {
+          "position": 4,
+          "driver": "Russell",
+          "points": 2
+        },
+        {
+          "position": 5,
+          "driver": "Piastri",
+          "points": 1
+        },
+        {
+          "position": 6,
+          "driver": "Sainz",
+          "points": 1
+        },
+        {
+          "position": 7,
+          "driver": "Hamilton",
+          "points": 0
+        },
+        {
+          "position": 8,
+          "driver": "Perez",
+          "points": 0
+        },
+        {
+          "position": 9,
+          "driver": "Ocon",
+          "points": 5
+        },
+        {
+          "position": 10,
+          "driver": "Alonso",
+          "points": 1
+        },
+        {
+          "position": 11,
+          "driver": "Gasly",
+          "points": 1
+        },
+        {
+          "position": 12,
+          "driver": "Albon",
+          "points": 4
+        },
+        {
+          "position": 13,
+          "driver": "Bottas",
+          "points": 7
+        },
+        {
+          "position": 14,
+          "driver": "Stroll",
+          "points": 1
+        },
+        {
+          "position": 15,
+          "driver": "Guanyu",
+          "points": 5
+        },
+        {
+          "position": 16,
+          "driver": "Tsunoda",
+          "points": 4
+        },
+        {
+          "position": 17,
+          "driver": "Ricciardo",
+          "points": 0
+        },
+        {
+          "position": 18,
+          "driver": "Hulkenberg",
+          "points": 7
+        },
+        {
+          "position": 19,
+          "driver": "Magnussen",
+          "points": 4
+        },
+        {
+          "position": 20,
+          "driver": "Sargeant",
+          "points": 0
+        }
+      ]
+    },
+    {
+      "name": "Petter",
+      "total": 58,
+      "picks": [
+        {
+          "position": 1,
+          "driver": "Verstappen",
+          "points": 1
+        },
+        {
+          "position": 2,
+          "driver": "Leclerc",
+          "points": 1
+        },
+        {
+          "position": 3,
+          "driver": "Perez",
+          "points": 5
+        },
+        {
+          "position": 4,
+          "driver": "Norris",
+          "points": 2
+        },
+        {
+          "position": 5,
+          "driver": "Hamilton",
+          "points": 2
+        },
+        {
+          "position": 6,
+          "driver": "Russell",
+          "points": 0
+        },
+        {
+          "position": 7,
+          "driver": "Piastri",
+          "points": 3
+        },
+        {
+          "position": 8,
+          "driver": "Sainz",
+          "points": 3
+        },
+        {
+          "position": 9,
+          "driver": "Alonso",
+          "points": 0
+        },
+        {
+          "position": 10,
+          "driver": "Ocon",
+          "points": 4
+        },
+        {
+          "position": 11,
+          "driver": "Gasly",
+          "points": 1
+        },
+        {
+          "position": 12,
+          "driver": "Ricciardo",
+          "points": 5
+        },
+        {
+          "position": 13,
+          "driver": "Bottas",
+          "points": 7
+        },
+        {
+          "position": 14,
+          "driver": "Ricciardo",
+          "points": 3
+        },
+        {
+          "position": 15,
+          "driver": "Tsunoda",
+          "points": 3
+        },
+        {
+          "position": 16,
+          "driver": "Guanyu",
+          "points": 4
+        },
+        {
+          "position": 17,
+          "driver": "Magnussen",
+          "points": 2
+        },
+        {
+          "position": 18,
+          "driver": "Albon",
+          "points": 2
+        },
+        {
+          "position": 19,
+          "driver": "Sargeant",
+          "points": 1
+        },
+        {
+          "position": 20,
+          "driver": "Hulkenberg",
+          "points": 9
+        }
+      ]
+    },
+    {
+      "name": "Swold",
+      "total": 54,
+      "picks": [
+        {
+          "position": 1,
+          "driver": "Verstappen",
+          "points": 0
+        },
+        {
+          "position": 2,
+          "driver": "Perez",
+          "points": 6
+        },
+        {
+          "position": 3,
+          "driver": "Leclerc",
+          "points": 0
+        },
+        {
+          "position": 4,
+          "driver": "Norris",
+          "points": 2
+        },
+        {
+          "position": 5,
+          "driver": "Hamilton",
+          "points": 2
+        },
+        {
+          "position": 6,
+          "driver": "Russell",
+          "points": 0
+        },
+        {
+          "position": 7,
+          "driver": "Antonelli",
+          "points": 11
+        },
+        {
+          "position": 8,
+          "driver": "Piastri",
+          "points": 4
+        },
+        {
+          "position": 9,
+          "driver": "Alonso",
+          "points": 0
+        },
+        {
+          "position": 10,
+          "driver": "Gasly",
+          "points": 0
+        },
+        {
+          "position": 11,
+          "driver": "Ricciardo",
+          "points": 6
+        },
+        {
+          "position": 12,
+          "driver": "Ocon",
+          "points": 2
+        },
+        {
+          "position": 13,
+          "driver": "Stroll",
+          "points": 0
+        },
+        {
+          "position": 14,
+          "driver": "Tsunoda",
+          "points": 2
+        },
+        {
+          "position": 15,
+          "driver": "Bottas",
+          "points": 5
+        },
+        {
+          "position": 16,
+          "driver": "Albon",
+          "points": 0
+        },
+        {
+          "position": 17,
+          "driver": "Guanyu",
+          "points": 3
+        },
+        {
+          "position": 18,
+          "driver": "Magnussen",
+          "points": 3
+        },
+        {
+          "position": 19,
+          "driver": "Hulkenberg",
+          "points": 8
+        },
+        {
+          "position": 20,
+          "driver": "Sargeant",
+          "points": 0
+        }
+      ]
+    },
+    {
+      "name": "Hannes",
+      "total": 56,
+      "picks": [
+        {
+          "position": 1,
+          "driver": "Verstappen",
+          "points": 7
+        },
+        {
+          "position": 2,
+          "driver": "Norris",
+          "points": 0
+        },
+        {
+          "position": 3,
+          "driver": "Hamilton",
+          "points": 4
+        },
+        {
+          "position": 4,
+          "driver": "Perez",
+          "points": 4
+        },
+        {
+          "position": 5,
+          "driver": "Piastri",
+          "points": 1
+        },
+        {
+          "position": 6,
+          "driver": "Sainz",
+          "points": 1
+        },
+        {
+          "position": 7,
+          "driver": "Sainz",
+          "points": 2
+        },
+        {
+          "position": 8,
+          "driver": "Alonso",
+          "points": 1
+        },
+        {
+          "position": 9,
+          "driver": "Russell",
+          "points": 3
+        },
+        {
+          "position": 10,
+          "driver": "Gasly",
+          "points": 0
+        },
+        {
+          "position": 11,
+          "driver": "Ricciardo",
+          "points": 6
+        },
+        {
+          "position": 12,
+          "driver": "Ocon",
+          "points": 2
+        },
+        {
+          "position": 13,
+          "driver": "Albon",
+          "points": 3
+        },
+        {
+          "position": 14,
+          "driver": "Stroll",
+          "points": 1
+        },
+        {
+          "position": 15,
+          "driver": "Tsunoda",
+          "points": 3
+        },
+        {
+          "position": 16,
+          "driver": "Guanyu",
+          "points": 4
+        },
+        {
+          "position": 17,
+          "driver": "Hulkenberg",
+          "points": 6
+        },
+        {
+          "position": 18,
+          "driver": "Bottas",
+          "points": 2
+        },
+        {
+          "position": 19,
+          "driver": "Sargeant",
+          "points": 1
+        },
+        {
+          "position": 20,
+          "driver": "Magnussen",
+          "points": 5
+        }
+      ]
+    }
+  ]
+}

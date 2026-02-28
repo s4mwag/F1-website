@@ -1,70 +1,201 @@
 export const player_predicts = {
-  Samuel: ["Hamilton", "Norris", "Verstappen", "Piastri", "Leclerc", "Russell", "Antonelli", "Lawson", "Sainz", "Hülkenberg",
-      "Alonso", "Tsunoda", "Albon", "Bearman", "Gasly", "Bortoleto", "Ocon", "Stroll", "Hadjar", "Doohan"],
+   Samuel: [
+      "Verstappen",
+      "Norris",
+      "Piastri",
+      "Leclerc",
+      "Russell",
+      "Antonelli",
+      "Hamilton",
+      "Hadjar",
+      "Sainz",
+      "Hulkenberg",
+      "Albon",
+      "Lawson",
+      "Ocon",
+      "Alonso",
+      "Bortoleto",
+      "Gasly",
+      "Bearman",
+      "Bottas",
+      "Perez",
+      "Lindblad",
+      "Stroll",
+      "Colapinto",
+   ],
 
-  Anton: ["Norris", "Verstappen", "Leclerc", "Piastri", "Hamilton", "Russell", "Lawson", "Alonso", "Antonelli", "Gasly",
-      "Sainz", "Stroll", "Albon", "Tsunoda", "Doohan", "Hülkenberg", "Hadjar", "Bearman", "Bortoleto", "Ocon"],
+   Anton: [
+      "Piastri",
+      "Verstappen",
+      "Norris",
+      "Leclerc",
+      "Russell",
+      "Antonelli",
+      "Sainz",
+      "Stroll",
+      "Hadjar",
+      "Hamilton",
+      "Alonso",
+      "Gasly",
+      "Albon",
+      "Bottas",
+      "Bearman",
+      "Lawson",
+      "Perez",
+      "Lindblad",
+      "Hulkenberg",
+      "Ocon",
+      "Bortoleto",
+      "Colapinto",
+   ],
 
-  Swold: ["Hamilton", "Verstappen", "Leclerc", "Norris", "Russell", "Piastri", "Antonelli", "Lawson", "Alonso",
-     "Sainz", "Albon", "Gasly", "Stroll", "Ocon", "Tsunoda", "Hülkenberg", "Bearman", "Doohan", "Hadjar", "Bortoleto"],
+   Swold: [
+      "Verstappen",
+      "Russell",
+      "Leclerc",
+      "Hamilton",
+      "Norris",
+      "Antonelli",
+      "Piastri",
+      "Hadjar",
+      "Sainz",
+      "Albon",
+      "Alonso",
+      "Gasly",
+      "Bortoleto",
+      "Hulkenberg",
+      "Lawson",
+      "Lindblad",
+      "Stroll",
+      "Bottas",
+      "Bearman",
+      "Perez",
+      "Ocon",
+      "Colapinto",
+   ],
 
-  Hannes: ["Leclerc", "Verstappen", "Norris", "Russell", "Piastri", "Hamilton", "Lawson", "Sainz", "Gasly", "Alonso",
-     "Antonelli", "Hülkenberg", "Tsunoda", "Stroll", "Bortoleto", "Albon", "Hadjar", "Ocon", "Bearman", "Doohan"],
+   Hannes: [
+      "Piastri",
+      "Verstappen",
+      "Russell",
+      "Norris",
+      "Leclerc",
+      "Antonelli",
+      "Sainz",
+      "Hamilton",
+      "Hadjar",
+      "Albon",
+      "Hulkenberg",
+      "Bottas",
+      "Alonso",
+      "Bearman",
+      "Perez",
+      "Ocon",
+      "Gasly",
+      "Stroll",
+      "Lawson",
+      "Bortoleto",
+      "Lindblad",
+      "Colapinto",
+   ],
 
-  David: ["Norris", "Piastri", "Leclerc", "Verstappen", "Russell", "Hamilton", "Lawson", "Antonelli", "Sainz", "Albon",
-     "Alonso", "Gasly", "Stroll", "Tsunoda", "Ocon", "Hülkenberg", "Bearman", "Doohan", "Hadjar", "Bortoleto"],
+   David: [
+      "Russell",
+      "Piastri",
+      "Norris",
+      "Verstappen",
+      "Leclerc",
+      "Antonelli",
+      "Hamilton",
+      "Sainz",
+      "Albon",
+      "Hadjar",
+      "Alonso",
+      "Bortoleto",
+      "Lawson",
+      "Bearman",
+      "Stroll",
+      "Hulkenberg",
+      "Lindblad",
+      "Ocon",
+      "Bottas",
+      "Gasly",
+      "Perez",
+      "Colapinto",
+   ],
 
-  Petter: ["Norris", "Verstappen", "Leclerc", "Piastri", "Hamilton", "Russell", "Lawson", "Antonelli", "Alonso", "Stroll",
-       "Gasly", "Tsunoda", "Sainz", "Albon", "Bearman", "Doohan", "Hadjar", "Ocon", "Hülkenberg", "Bortoleto"],
+   Petter: [
+      "Russell",
+      "Verstappen",
+      "Norris",
+      "Piastri",
+      "Antonelli",
+      "Leclerc",
+      "Hamilton",
+      "Alonso",
+      "Hadjar",
+      "Sainz",
+      "Albon",
+      "Stroll",
+      "Bearman",
+      "Ocon",
+      "Gasly",
+      "Lindblad",
+      "Perez",
+      "Lawson",
+      "Bottas",
+      "Hulkenberg",
+      "Colapinto",
+      "Bortoleto",
+   ],
   
-  Herman: ["Norris", "Piastri", "Leclerc", "Russell", "Hamilton", "Antonelli", "Verstappen", "Alonso", "Sainz", "Lawson",
-     "Albon", "Stroll", "Gasly", "Bortoleto", "Doohan", "Tsunoda", "Ocon", "Bearman", "Hadjar", "Hülkenberg"],
+   Herman: [
+      "Leclerc",
+      "Russell",
+      "Verstappen",
+      "Piastri",
+      "Norris",
+      "Antonelli",
+      "Hamilton",
+      "Hadjar",
+      "Albon",
+      "Perez",
+      "Sainz",
+      "Lindblad",
+      "Lawson",
+      "Bottas",
+      "Alonso",
+      "Bortoleto",
+      "Gasly",
+      "Hulkenberg",
+      "Ocon",
+      "Stroll",
+      "Colapinto",
+      "Bearman",
+   ],
 
-  "Betting sidor": ["Norris", "Verstappen", "Leclerc", "Hamilton", "Piastri", "Russell", "Alonso", "Lawson", "Antonelli", "Sainz",
-     "Gasly", "Albon", "Bearman", "Tsunoda", "Ocon", "Hadjar", "Stroll", "Hülkenberg", "Doohan", "Bortoleto"],
+   "Betting sidor": [
+      "Russell",
+      "Verstappen",
+      "Leclerc",
+      "Hamilton",
+      "Antonelli",
+      "Norris",
+      "Piastri",
+      "Alonso",
+      "Sainz",
+      "Hadjar",
+      "Gasly",
+      "Albon",
+      "Stroll",
+      "Lindblad",
+      "Ocon",
+      "Lawson",
+      "Bearman",
+      "Colapinto",
+      "Bortoleto",
+      "Hulkenberg",
+      "Perez",
+      "Bottas",
+   ],
 }
-
-// 1	Norris
-// 2	Verstappen
-// 3	Leclerc
-// 4	Piastri
-// 5	Hamilton
-// 6	Russell
-// 7	Lawson
-// 8	Alonso
-// 9	Antonelli
-// 10	Gasly
-// 11	Sainz
-// 12	Stroll
-// 13	Albon
-// 14	Tsonoda
-// 15	Doohan
-// 16	Hulkenberg
-// 17	Hadjar
-// 18	Bearman
-// 19	Bortoleto
-// 20	Ocon
-
-
-
-// export const samuel_list = player_predicts.Samuel.map((driver, index) => {
-//   return {predicted_position: index+1, driver: driver}
-// })
-// export const anton_list = player_predicts.Anton.map((driver, index) => {
-//    return {predicted_position: index+1, driver: driver}
-//  })
-//  export const swold_list = player_predicts.Swold.map((driver, index) => {
-//    return {predicted_position: index+1, driver: driver}
-//  })
-//  export const hannes_list = player_predicts.Hannes.map((driver, index) => {
-//    return {predicted_position: index+1, driver: driver}
-//  })
-//  export const david_list = player_predicts.David.map((driver, index) => {
-//    return {predicted_position: index+1, driver: driver}
-//  })
-//  export const petter_list = player_predicts.Petter.map((driver, index) => {
-//    return {predicted_position: index+1, driver: driver}
-//  })
-//    export const herman_list = player_predicts.Herman.map((driver, index) => {
-//       return {predicted_position: index+1, driver: driver}
-// })
