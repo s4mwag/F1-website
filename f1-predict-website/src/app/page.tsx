@@ -253,7 +253,7 @@ export default function Home() {
               <div className={styles.list} key={player.name}>
                 <h2>{player.name} <span className={styles.totpoints}>{player.totalPoints}</span></h2>
                 <ul>
-                  {player.predictions.comparisonResults.map((driver, index) => (
+                  {player.predictions.comparisonResults.map((driver: any, index: number) => (
                     <li key={`${player.name}-${driver.driver}-${index}`}>
                       {index + 1}.{"\u00A0"}<strong>{driver.driver}</strong> <span className={styles.points}>{driver.point}</span>
                     </li>
