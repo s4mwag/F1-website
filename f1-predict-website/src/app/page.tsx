@@ -91,8 +91,8 @@ export default function Home() {
         let fetchedData = standingsLists[0].DriverStandings || [];
         // Sort by points descending and assign correct positions
         fetchedData = fetchedData
-          .sort((a, b) => parseFloat(b.points) - parseFloat(a.points))
-          .map((driver, index) => ({ ...driver, position: index + 1 }));
+          .sort((a: Driver, b: Driver) => parseFloat(b.points) - parseFloat(a.points))
+          .map((driver: Driver, index: number) => ({ ...driver, position: index + 1 }));
         setRaceData(fetchedData);
         setUsedFallback(false);
       } else {
@@ -118,8 +118,8 @@ export default function Home() {
             }
             // Sort by points descending and assign correct positions
             standings = standings
-              .sort((a, b) => parseFloat(b.points) - parseFloat(a.points))
-              .map((driver, index) => ({ ...driver, position: index + 1 }));
+              .sort((a: Driver, b: Driver) => parseFloat(b.points) - parseFloat(a.points))
+              .map((driver: Driver, index: number) => ({ ...driver, position: index + 1 }));
             setRaceData(standings);
             // indicate that we used fallback standings (selected season had no data)
             setUsedFallback(true);
