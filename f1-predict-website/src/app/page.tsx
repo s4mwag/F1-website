@@ -1,7 +1,6 @@
 "use client"
 
 import { useState, useEffect } from "react";
-import Image from "next/image";
 import styles from "./page.module.css";
 import { player_predicts } from "./player_predicts";
 import picks2021 from "../data/swef1_picks_2021.json";
@@ -9,6 +8,38 @@ import picks2022 from "../data/swef1_picks_2022.json";
 import picks2023 from "../data/swef1_picks_2023.json";
 import picks2024 from "../data/swef1_picks_2024.json";
 import picks2025 from "../data/swef1_picks_2025.json";
+
+// Static fallback driver list for when API data is incomplete
+const staticDriverList = [
+  ["Max Verstappen", "Red Bull Racing"],
+  ["Lando Norris", "McLaren"],
+  ["Oscar Piastri", "McLaren"],
+  ["Charles Leclerc", "Ferrari"],
+  ["Lewis Hamilton", "Ferrari"],
+  ["George Russell", "Mercedes"],
+  ["Kimi Antonelli", "Mercedes"],
+  ["Fernando Alonso", "Aston Martin"],
+  ["Lance Stroll", "Aston Martin"],
+  ["Nico Hulkenberg", "Audi"],
+  ["Gabriel Bortoleto", "Audi"],
+  ["Sergio Perez", "Cadillac"],
+  ["Valtteri Bottas", "Cadillac"],
+  ["Alexander Albon", "Williams"],
+  ["Carlos Sainz", "Williams"],
+  ["Pierre Gasly", "Alpine"],
+  ["Franco Colapinto", "Alpine"],
+  ["Esteban Ocon", "Haas"],
+  ["Oliver Bearman", "Haas"],
+  ["Liam Lawson", "Racing Bulls (VCARB)"],
+  ["Arvid Lindblad", "Racing Bulls (VCARB)"]
+];
+
+const staticFormatted = staticDriverList.map((row, idx) => ({
+  Driver: { familyName: String(row[0]).split(" ").slice(-1)[0] },
+  Constructor: { name: String(row[1]) },
+  position: idx + 1,
+  points: "0"
+}));
 
 // Define the interface for the race data
 interface Driver {
@@ -22,12 +53,16 @@ interface Driver {
   points: string;
 }
 
+// Function to normalize driver names for matching
+const normalizeName = (name: string) => name.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+
 // Function to compare player predictions with actual race data
 const comparePredictions = (predictions: string[], raceData: Driver[]) => {
   let totalPoints = 0;
   const comparisonResults =  predictions.map((driver, index) => {
-    const actualDriver = raceData.find(d => d.Driver.familyName === driver);
-    const actualPosition = actualDriver ? (isNaN(actualDriver.position) ? 20 : actualDriver.position) : 20;
+    const normalizedDriver = normalizeName(driver);
+    const actualDriver = raceData.find(d => normalizeName(d.Driver.familyName) === normalizedDriver);
+    const actualPosition = actualDriver ? (isNaN(Number(actualDriver.position)) ? 20 : Number(actualDriver.position)) : 20;
     const point = Math.abs(actualPosition - (index + 1));
     totalPoints += point;
     return {
@@ -51,62 +86,40 @@ export default function Home() {
     async function fetchRaceResults() {
       const response = await fetch(`https://api.jolpi.ca/ergast/f1/${year}/driverstandings.json`);
       const data = await response.json();
-      // console.log("API Response:", data); // Log the API response
       const standingsLists = data?.MRData?.StandingsTable?.StandingsLists;
       if (Array.isArray(standingsLists) && standingsLists.length > 0) {
-        setRaceData(standingsLists[0].DriverStandings || []);
+        let fetchedData = standingsLists[0].DriverStandings || [];
+        // Sort by points descending and assign correct positions
+        fetchedData = fetchedData
+          .sort((a, b) => parseFloat(b.points) - parseFloat(a.points))
+          .map((driver, index) => ({ ...driver, position: index + 1 }));
+        setRaceData(fetchedData);
         setUsedFallback(false);
       } else {
         console.warn(`No standings available for season ${year}`);
         // If 2026 has no data, use the provided static standings list so the page can render
         if (year === 2026) {
-          const static2026 = [
-            ["Lando Norris", "McLaren"],
-            ["Oscar Piastri", "McLaren"],
-            ["Charles Leclerc", "Ferrari"],
-            ["Lewis Hamilton", "Ferrari"],
-            ["Max Verstappen", "Red Bull Racing"],
-            ["Isack Hadjar", "Red Bull Racing"],
-            ["George Russell", "Mercedes"],
-            ["Kimi Antonelli", "Mercedes"],
-            ["Fernando Alonso", "Aston Martin"],
-            ["Lance Stroll", "Aston Martin"],
-            ["Nico Hülkenberg", "Audi"],
-            ["Gabriel Bortoleto", "Audi"],
-            ["Sergio Pérez", "Cadillac"],
-            ["Valtteri Bottas", "Cadillac"],
-            ["Alexander Albon", "Williams"],
-            ["Carlos Sainz", "Williams"],
-            ["Pierre Gasly", "Alpine"],
-            ["Franco Colapinto", "Alpine"],
-            ["Esteban Ocon", "Haas"],
-            ["Oliver Bearman", "Haas"],
-            ["Liam Lawson", "Racing Bulls (VCARB)"],
-            ["Arvid Lindblad", "Racing Bulls (VCARB)"]
-          ];
-          const formatted = static2026.map((row, idx) => ({
-            Driver: { familyName: String(row[0]).split(" ").slice(-1)[0] },
-            Constructor: { name: String(row[1]) },
-            position: idx + 1,
-            points: "0"
-          }));
-          setRaceData(formatted as any);
+          setRaceData(staticFormatted);
           setUsedFallback(false);
           return;
         }
         console.warn(`attempting previous season ${year - 1}`);
-        // Try previous season's standings as a fallback
         try {
-          const prevResponse = await fetch(`https://api.jolpi.ca/ergast/f1/${year - 1}https://api.jolpi.ca/ergast/f1/2026/driverstandings.json`);
+          const prevResponse = await fetch(`https://api.jolpi.ca/ergast/f1/${year - 1}/driverstandings.json`);
           const prevData = await prevResponse.json();
           const prevLists = prevData?.MRData?.StandingsTable?.StandingsLists;
           if (Array.isArray(prevLists) && prevLists.length > 0) {
             let standings = prevLists[0].DriverStandings || [];
-            // If we're viewing the current season but it has no data, keep the previous
-            // season order but reset all driver points to zero.
             if (year === currentYear) {
               standings = standings.map((d: any) => ({ ...d, points: "0" }));
             }
+            if (year === currentYear) {
+              standings = standings.map((d: any) => ({ ...d, points: "0" }));
+            }
+            // Sort by points descending and assign correct positions
+            standings = standings
+              .sort((a, b) => parseFloat(b.points) - parseFloat(a.points))
+              .map((driver, index) => ({ ...driver, position: index + 1 }));
             setRaceData(standings);
             // indicate that we used fallback standings (selected season had no data)
             setUsedFallback(true);
@@ -244,7 +257,7 @@ export default function Home() {
                 <ul>
                 {raceData.map((driver: Driver) => (
                   <li key={`${driver.position}-${driver.Driver.familyName}`}>
-                    {isNaN(driver.position) ? 20 : driver.position}.{"\u00A0"}<strong>{driver.Driver.familyName}</strong> <span className={styles.points}>{driver.points}</span>
+                    {isNaN(Number(driver.position)) ? 20 : Number(driver.position)}.{"\u00A0"}<strong>{driver.Driver.familyName}</strong> <span className={styles.points}>{driver.points}</span>
                   </li>
                 ))}
                 </ul>
@@ -266,94 +279,3 @@ export default function Home() {
     </div>
   );
 }
- 
-
-// <div className={styles.list}>
-// <h2>Anton <span className={styles.totpoints}>{totalAntonPoints}</span></h2>
-// <ul>
-// {antonPredictions.comparisonResults.map((driver, index) => (
-//       <li key={index}>
-//         {index+1}. <strong>{driver.driver}</strong> <span className={styles.points}>{driver.point}</span>
-//       </li>
-//   ))}
-// </ul>
-// </div>
-
-// <div className={styles.list}>
-// <h2>David <span className={styles.totpoints}>{totalDavidPoints}</span></h2>
-// <ul>
-// {davidPredictions.comparisonResults.map((driver, index) => (
-//       <li key={index}>
-//         {index+1}. <strong>{driver.driver}</strong> <span className={styles.points}>{driver.point}</span>
-//       </li>
-//   ))}
-// </ul>
-// </div>
-
-// <div className={styles.list}>
-// <h2>Swold <span className={styles.totpoints}>{totalSwoldPoints}</span></h2>
-// <ul>
-// {swoldPredictions.comparisonResults.map((driver, index) => (
-//       <li key={index}>
-//         {index+1}. <strong>{driver.driver}</strong> <span className={styles.points}>{driver.point}</span>
-//       </li>
-//   ))}
-// </ul>
-// </div>
-
-// <div className={styles.list}>
-// <h2>Samuel <span className={styles.totpoints}>{totalSamuelPoints}</span></h2>
-// <ul>
-// {samuelPredictions.comparisonResults.map((driver, index) => (
-//       <li key={index}>
-//         {index+1}. <strong>{driver.driver}</strong> <span className={styles.points}>{driver.point}</span>
-//       </li>
-//   ))}
-// </ul>
-// </div>
-
-
-// <div className={styles.list}>
-// <h2>Hannes <span className={styles.totpoints}>{totalHannesPoints}</span></h2>
-// <ul>
-// {hannesPredictions.comparisonResults.map((driver, index) => (
-//       <li key={index}>
-//         {index+1}. <strong>{driver.driver}</strong> <span className={styles.points}>{driver.point}</span>
-//       </li>
-//   ))}
-// </ul>
-// </div>
-
-// <div className={styles.list}>
-// <h2>Herman <span className={styles.totpoints}>{totalHermanPoints}</span></h2>
-// <ul>
-// {hermanPredictions.comparisonResults.map((driver, index) => (
-//       <li key={index}>
-//         {index+1}. <strong>{driver.driver}</strong> <span className={styles.points}>{driver.point}</span>
-//       </li>
-//   ))}
-// </ul>
-// </div>
-
-// <div className={styles.list}>
-// <h2>Petter <span className={styles.totpoints}>{totalPetterPoints}</span></h2>
-// <ul>
-// {petterPredictions.comparisonResults.map((driver, index) => (
-//       <li key={index}>
-//         {index+1}. <strong>{driver.driver}</strong> <span className={styles.points}>{driver.point}</span>
-//       </li>
-//   ))}
-// </ul>
-// </div>
-
-// <div className={styles.list}>
-// <h2>Bet365 <span className={styles.totpoints}>{totalBet365Points}</span></h2>
-// <ul>
-// {bet365Predictions.comparisonResults.map((driver, index) => (
-//       <li key={index}>
-//         {index+1}. <strong>{driver.driver}</strong> <span className={styles.points}>{driver.point}</span>
-//       </li>
-//   ))}
-// </ul>
-// </div>
-// </div>
